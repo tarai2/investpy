@@ -111,15 +111,15 @@ class SearchObj(object):
         
         """
 
-        try:
-            datetime.strptime(from_date, '%d/%m/%Y')
-        except ValueError:
-            raise ValueError("ERR#0011: incorrect from_date date format, it should be 'dd/mm/yyyy'.")
+#         try:
+#             datetime.strptime(from_date, '%d/%m/%Y')
+#         except ValueError:
+#             raise ValueError("ERR#0011: incorrect from_date date format, it should be 'dd/mm/yyyy'.")
 
-        try:
-            datetime.strptime(to_date, '%d/%m/%Y')
-        except ValueError:
-            raise ValueError("ERR#0012: incorrect to_date format, it should be 'dd/mm/yyyy'.")
+#         try:
+#             datetime.strptime(to_date, '%d/%m/%Y')
+#         except ValueError:
+#             raise ValueError("ERR#0012: incorrect to_date format, it should be 'dd/mm/yyyy'.")
 
         from_date = datetime.strptime(from_date, '%d/%m/%Y')
         to_date = datetime.strptime(to_date, '%d/%m/%Y')
