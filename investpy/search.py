@@ -100,8 +100,8 @@ def search(text, n_results=None, filters=None):
 
     data = req.json()
 
-    if data['total']['quotes'] == 0:
-        raise ValueError("ERR#0093: no results found on Investing for the introduced text.")
+    # if data['total']['quotes'] == 0:
+    #     raise ValueError("ERR#0093: no results found on Investing for the introduced text.")
 
     search_results = list()
 
