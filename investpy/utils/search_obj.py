@@ -121,8 +121,8 @@ class SearchObj(object):
         # except ValueError:
         #     raise ValueError("ERR#0012: incorrect to_date format, it should be 'dd/mm/yyyy'.")
 
-        from_date = datetime.strptime(from_date, '%m/%d/%Y')
-        to_date = datetime.strptime(to_date, '%m/%d/%Y')
+        from_date = datetime.strptime(from_date, '%d/%m/%Y')
+        to_date = datetime.strptime(to_date, '%d/%m/%Y')
 
         if from_date >= to_date:
             raise ValueError("ERR#0032: to_date should be greater than from_date, both formatted as 'dd/mm/yyyy'.")
@@ -152,7 +152,7 @@ class SearchObj(object):
             else:
                 self.data = pd.concat(result)
         else:
-            head, params = self._prepare_historical_request(header=header, from_date=from_date.strftime('%d/%m/%Y'), to_date=to_date.strftime('%d/%m/%Y'))
+            head, params = self._prepare_historical_request(header=header, from_date=from_date.strftime('%m/%d/%Y'), to_date=to_date.strftime('%m/%d/%Y'))
             try:
                 self.data = self._data_retrieval(product=self.pair_type, head=head, params=params)
             except:
